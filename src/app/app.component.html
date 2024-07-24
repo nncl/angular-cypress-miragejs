@@ -1,5 +1,9 @@
 <h1>User:</h1>
 
-<pre>
-  {{ user$ | async | json }}
-</pre>
+<div *ngIf="user$ | async as users">
+  <ul>
+    <li *ngFor="let user of users.results">
+      {{ user.name.first }}
+    </li>
+  </ul>
+</div>
