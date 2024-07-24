@@ -19,6 +19,6 @@ export class AppComponent {
   }
 
   private getUser() {
-    return this.httpClient.get('https://randomuser.me/api/');
+    return this.httpClient.get('https://randomuser.me/api?results=10');
   }
 }
