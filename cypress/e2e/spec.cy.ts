@@ -1,14 +1,25 @@
+import {makeServer} from "../../src/mirage/server";
+import {Server} from "miragejs/server";
+
 describe('My First Test', () => {
+  let server: Server;
+
+  beforeEach(() => {
+    server = makeServer({ environment: "test" })
+  })
+
+  afterEach(() => {
+    server.shutdown()
+  })
+
   it('Visits the initial project page', () => {
-    // cy.intercept('GET', 'https://randomuser.me/api?results=10', {
-    //   "results": [
-    //     { name: {first: 'John Wick'} },
-    //     { name: {first: 'John Wick 2'} }
-    //   ]
-    // });
+    const users = server.createList('user', 2);
 
     cy.visit('/')
+
     cy.contains('User')
-    cy.contains('John Wick')
+    cy.get('ul').find('li').should('have.length', 10)
+
+    expect(users.length).to.equal(2)
   })
 })

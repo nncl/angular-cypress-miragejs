@@ -30,6 +30,7 @@
     "@angular/cli": "^18.1.2",
     "@angular/compiler-cli": "^18.1.0",
     "@cypress/schematic": "^2.5.2",
+    "@faker-js/faker": "^8.4.1",
     "@types/jasmine": "~5.1.0",
     "cypress": "latest",
     "jasmine-core": "~5.1.0",
