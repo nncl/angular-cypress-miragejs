@@ -1,6 +1,6 @@
-<h1>User:</h1>
+<h1>Users</h1>
 
-<div *ngIf="user$ | async as users">
+<div *ngIf="users$ | async as users">
   <ul>
     <li *ngFor="let user of users.results">
       {{ user.name.first }}

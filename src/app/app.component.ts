@@ -12,13 +12,13 @@ import {Observable} from "rxjs";
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  user$: Observable<any>;
+  users$: Observable<any>;
 
   constructor(private httpClient: HttpClient) {
-    this.user$ = this.getUser();
+    this.users$ = this.getUsers();
   }
 
-  private getUser() {
+  private getUsers() {
     return this.httpClient.get('https://randomuser.me/api?results=10');
   }
 }
